@@ -24,6 +24,7 @@ jobs:
         (require 'package)
         (setq package-user-dir (expand-file-name "ci-elpa"))
         (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+        (setq package-check-signature nil)
         (package-initialize)
         (unless (and (package-installed-p 'gptel) (package-installed-p 'yaml)
                      (package-installed-p 'orderless))
